@@ -1,0 +1,15 @@
+∇ day05
+    {
+        ⎕IO ← 0
+        input ← ⊃⎕NGET (InputFile 5) 1
+
+        parse ← 2∘⊥(=∘'B'∨=∘'R')
+        rangeSum ← {(2÷⍨⍺+⍵)×1+⍵-⍺}
+        solve2 ← +/-⍨⌊/rangeSum⌈/
+
+        numbers ← parse¨input
+
+        ⎕← 'Part 1:', ⌈/numbers
+        ⎕← 'Part 2:', solve2 numbers
+    } ⍬
+∇

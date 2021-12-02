@@ -1,0 +1,10 @@
+∇ day06
+    {
+        input ← ⊃⎕NGET (InputFile 6) 1
+        groups ← (×∘≢¨⊆⊢)input
+        _solve ← {+/≢⍤⊃⍤(⍺⍺/)¨⍵}
+
+        ⎕← 'Part 1:', ∪_solve groups
+        ⎕← 'Part 2:', ∩_solve groups
+    } ⍬
+∇

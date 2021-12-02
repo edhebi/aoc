@@ -1,0 +1,15 @@
+∇ day02
+    {
+        input ← ⊃⎕NGET (InputFile 2) 1
+        lines ← ⎕CSV (' '⎕R','⊢input) '' 4
+
+        keys ← 'forward' 'down' 'up'
+        parse ← {k v ← ⍵ ⋄ v×k∘≡¨keys}
+        data ← parse¨↓lines
+
+        ⎕← 'Part 1:', {f d u ← ⍵ ⋄ f×d-u} +⌿↑data
+
+        aim ← +\(-/1∘↓)¨data
+        ⎕← 'Part 2:', ×/ +⌿↑ aim (⊢,×)¨ ⊃¨data
+    } ⍬
+∇

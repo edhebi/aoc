@@ -1,0 +1,10 @@
+∇ day01
+    {
+        input ← ⍎¨⊃⎕NGET (InputFile 1) 1
+
+        solve ← {∪(2020=,⊃∘.+/⍵)/,⊃∘.×/⍵}
+
+        ⎕← 'Part 1:', solve 2/⊂input
+        ⎕← 'Part 2:', solve 3/⊂input
+    } ⍬
+∇

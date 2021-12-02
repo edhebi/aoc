@@ -1,0 +1,8 @@
+InputFile ← {
+    ⍝ This file uses its own location to locate the relative ../inputs
+    ⍝ directory and gives you the dayXX.txt file path under it
+    padded ← '0'@(=∘' ')2 0⍕⍵
+    basename ← 'day',padded,'.txt'
+    dirname ← ⊃⎕NPARTS ⊃⎕SE.Link.GetFileName ⊂'InputFile'
+    dirname,'../inputs/',basename
+}

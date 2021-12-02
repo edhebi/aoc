@@ -1,0 +1,10 @@
+[package]
+name = "aoc2020"
+version = "0.1.0"
+authors = ["Léo Masson <lmasson@edhebi.info>"]
+edition = "2018"
+
+[dependencies]
+regex = "1.4.2"
+lazy_static = "1.4.0"
+boolinator = "2.4.0"

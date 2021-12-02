@@ -1,0 +1,16 @@
+∇ day02
+    {
+        input ← ⊃⎕NGET (InputFile 2) 1
+        data ← ↓⎕CSV ('\W+'⎕R','⊢input) '' 4
+        check1 ← {
+            (min max c pass) ← ⍵
+            (≥∘min∧≤∘max)+/c=pass
+        }
+        check2 ← {
+            (i j c pass) ← ⍵
+            1=+/c=(⊂i j)⌷pass
+        }
+        ⎕← 'Part 1:', +/check1¨data
+        ⎕← 'Part 2:', +/check2¨data
+    } ⍬
+∇
