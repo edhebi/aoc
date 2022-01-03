@@ -1,6 +1,6 @@
 function getinput(f::Function, day)
   n = lpad(day, 2, '0')
-  fname = joinpath(dirname(pwd()), "inputs", "day$n.txt")
+  fname = joinpath(dirname(Base.source_dir()), "inputs", "day$n.txt")
   open(f, fname, "r")
 end
 
