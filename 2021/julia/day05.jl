@@ -9,7 +9,7 @@ indices(a, b) = a == b ? a : a:sign(b-a):b
 getpoints(l) = (Tuple ∘ vcat).(indices(l.x1, l.x2), indices(l.y1, l.y2))
 
 function intersections(lines)
-  counted = reduce(mergewith(+), Dict(z=>1 for z=getpoints(line)) for line=lines)
+  counted = mergewith(+, Dict.(map(pts -> pts .=> 1, getpoints.(lines)))...)
   count(>(1), values(counted))
 end
 
