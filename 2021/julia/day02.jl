@@ -8,7 +8,7 @@ end
 part1() = getinput(2) do f
     pos = [0, 0]
     for (dir, val) = parseline.(readlines(f))
-            pos .+= if dir == "forward"
+        pos .+= if dir == "forward"
             [val, 0]
         elseif dir == "up"
             [0, -val]
