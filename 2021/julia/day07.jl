@@ -9,7 +9,7 @@ end
 function part2()
     crabs = parse.(Int, split(getinput(7), ','))
     a,b = extrema(crabs)
-    ∑ⁿ(n) = (n^2 + abs(n)) ÷ 2 
+    ∑ⁿ(n) = (n^2 + abs(n)) ÷ 2
     minimum(n -> sum(∑ⁿ.(crabs .- n)), a:b)
 end
 
